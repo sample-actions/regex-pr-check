@@ -18,8 +18,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name : Check Message
-        run: echo ${{ steps.get-pr-commits.outputs.commits }}
+#       - name : Check Message
+#         run: echo ${{ steps.get-pr-commits.outputs.commits }}
           
       - name: Check Fixes
         if: ${{ success() || failure() }}
