@@ -17,7 +17,7 @@ jobs:
         uses: tim-actions/get-pr-commits@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name : Check Message
         run: echo ${{ steps.get-pr-commits.outputs.commits }}
           
@@ -26,6 +26,6 @@ jobs:
         uses: tim-actions/commit-message-checker-with-regex@v0.3.1
         with:
           commits: ${{ steps.get-pr-commits.outputs.commits }}
-          pattern: '^[A-Z]+-[0-9]+$'
+          pattern: '.*'
           error: 'No "Fixes" found'
           one_pass_all_pass: 'true'
