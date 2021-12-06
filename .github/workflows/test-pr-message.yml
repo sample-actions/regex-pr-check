@@ -26,3 +26,6 @@ jobs:
           pattern: '^[A-Z]+-[0-9]+$'
           error: 'No "Fixes" found'
           one_pass_all_pass: 'true'
+        
+      - name : Check Message
+        run: echo ${{ steps.get-pr-commits.outputs.commits }}
